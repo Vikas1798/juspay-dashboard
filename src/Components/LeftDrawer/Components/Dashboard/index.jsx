@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ShieldEllipsis, PanelsTopLeft, FolderOpenDot, BookOpenText, ChevronRight } from 'lucide-react'
+import { ShieldEllipsis, PanelsTopLeft, FolderOpenDot, BookOpenText, ChevronRight, ListOrdered } from 'lucide-react'
 
 const Dashboard = () => {
     const [state, setState] = useState({
@@ -11,6 +11,11 @@ const Dashboard = () => {
             name: 'Default',
             icon: ShieldEllipsis,
             slug: 'default'
+        },
+        {
+            name: 'Orders',
+            icon: ListOrdered,
+            slug: 'orders'
         },
         {
             name: 'eCommerce',
@@ -48,7 +53,7 @@ const Dashboard = () => {
                     list?.map((d, i) => (
                         <div key={i} onMouseEnter={() => handleData(d.slug)} className={`${d?.slug === state?.currentSegment ? 'bg-[#1C1C1C0D]' : ''} relative flex items-center py-[2px] rounded-[8px] cursor-pointer mb-1`}>
                             {
-                                d?.slug === state?.currentSegment && <div className='h-[14px] w-[4px] absolute left-0 bg-[#1C1C1C] rounded-[1px]'></div>
+                                d?.slug === state?.currentSegment && <div className='h-[14px] w-[3px] absolute left-0 bg-[#1C1C1C] rounded-[1px]'></div>
                             }
                             <div className='flex items-center pl-4'>
                                 <ChevronRight size={14} strokeWidth={1.5} className={`text-[#1C1C1C33] ${d?.slug === state?.currentSegment ? 'invisible' : ''}`} />

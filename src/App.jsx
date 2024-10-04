@@ -5,7 +5,7 @@ import RightDrawer from './Components/RightDrawer';
 
 function App() {
     return (
-        <section className='grid grid-cols-12'>
+        <section className='grid grid-cols-12 items-start'>
             <LeftDrawer />
             <Dashboard />
             <RightDrawer />

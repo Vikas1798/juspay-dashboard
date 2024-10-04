@@ -27,7 +27,7 @@ const LeftDrawer = () => {
     ]
 
     return (
-        <section className='col-span-2 p-4 grid gap-y-4 border-r-[1px] border-r-[#1C1C1C1A]'>
+        <section className='col-span-2 py-5 px-4 grid gap-y-4 border-r-[1px] border-r-[#1C1C1C1A]'>
             <figure className='flex items-center'>
                 <img src="https://framerusercontent.com/images/GCFgMvkEdGKHPs31ezbHUFXr1A.png" alt="" className='w-[24px] h-[24px] rounded-full' />
                 <h1 className='text-sm font-normal ps-2'>ByeWind</h1>

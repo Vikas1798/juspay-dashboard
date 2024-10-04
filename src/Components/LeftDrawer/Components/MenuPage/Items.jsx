@@ -22,7 +22,7 @@ const Items = ({ data }) => {
                 {
                     data.icon && <data.icon size={16} strokeWidth={1.5} className="text-[#1C1C1C] " />
                 }
-                <p className='text-sm font-normal pl-1'>{data?.name}</p>
+                <p className='text-sm font-normal pl-1 line-clamp-1'>{data?.name}</p>
             </div>
             {
                 (data?.children && state.isOpen) &&
