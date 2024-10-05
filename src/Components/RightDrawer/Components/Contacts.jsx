@@ -9,8 +9,8 @@ const Contacts = () => {
             <Header label='Contacts' />
             {
                 contacts?.map((d, i) => (
-                    <div className='flex items-center mb-2 last:mb-0' key={i}>
-                        <img src="https://framerusercontent.com/images/GCFgMvkEdGKHPs31ezbHUFXr1A.png" alt="" className='w-[24px] h-[24px] rounded-full' />
+                    <div className='grid grid-cols-6 gap-2 mb-3 last:mb-0 items-start' key={i}>
+                        <img src={d?.image} alt="" className='w-[24px] h-[24px] rounded-full object-cover' />
                         <MessageTime message={d?.name} time={d?.time} />
                     </div>
                 ))

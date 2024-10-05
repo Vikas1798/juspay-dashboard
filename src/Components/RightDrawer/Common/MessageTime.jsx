@@ -2,7 +2,7 @@ import React from 'react'
 
 const MessageTime = ({ message, time }) => {
     return (
-        <div className='text-start pl-2'>
+        <div className='text-start col-span-5'>
             <p className='text-sm font-normal text-[#1C1C1C] line-clamp-1'>{message}</p>
             {
                 time &&
