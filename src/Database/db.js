@@ -59,22 +59,26 @@ const notification = [
     {
         message:'You have a bug that needs to be fixed.',
         time:'Just now',
-        icon:Bug
+        icon:Bug,
+        color:'bg-[#E3F5FF]'
     },
     {
         message:'New user registered',
         time:'59 minutes ago',
-        icon:UserRound
+        icon:UserRound,
+        color:'bg-[#E5ECF6]'
     },
     {
         message:'You have a bug that needs to be fixed.',
         time:'12 hours ago',
-        icon:Bug
+        icon:Bug,
+        color:'bg-[#E3F5FF]'
     },
     {
         message:'Andi Lane subscribed to you',
         time:'Today, 11:59 AM',
-        icon:Radio
+        icon:Radio,
+        color:'bg-[#E5ECF6]'
     }
 ]
 
@@ -166,4 +170,100 @@ const stats = [
     }
 ]
 
-export { pageMenus, notification, activities, contacts, stats};
+// data for revenue by location
+const  revenueByLocation = [
+    {   
+        place:'New York',
+        revenue:72
+    },
+    {   
+        place:'San Francisco',
+        revenue:39
+    },
+    {   
+        place:'Sydney',
+        revenue:25
+    },
+    {   
+        place:'Singapore',
+        revenue:61
+    }
+]
+
+// Top selling products list - table head
+const productsTableHead = [
+        {
+            label: 'Name'
+        },
+        {
+            label: 'Price'
+        },
+        {
+            label: 'Quantity'
+        },
+        {
+            label: 'Amount'
+        },
+]
+
+// Top selling products list - table body data
+const productsTableData = [
+    {
+        name: 'ASOS Ridley High Waist',
+        price:'$79.49',
+        quantity:'82',
+        amount:'$6,518.18'
+    },
+    {
+        name: 'Marco Lightweight Shirt',
+        price:'$128.50',
+        quantity:'37',
+        amount:'$4,754.50'
+    },
+    {
+        name: 'Half Sleeve  Shirt',
+        price:'$39.99',
+        quantity:'64',
+        amount:'$2,559.36'
+    },
+    {
+        name: 'Lightweight Jacket',
+        price:'$20.00',
+        quantity:'184',
+        amount:'$3,680.00'
+    },
+    {
+        name: 'Marco Shoes',
+        price:'$79.49',
+        quantity:'64',
+        amount:'$1,965.81'
+    },
+]
+
+
+//Total Sales data
+const totalSales = [
+    {
+        by:'Direct',
+        price:'$300.56',
+        color:'text-[#1C1C1C]'
+    },
+    {
+        by:'Affilliate',
+        price:'$135.18',
+        color:'text-[#BAEDBD]'
+    },
+    {
+        by:'Sponsored',
+        price:'$154.02',
+        color:'text-[#95A4FC]'
+    },
+    {
+        by:'E-mail',
+        price:'$48.96',
+        color:'text-[#B1E3FF]'
+    }
+]
+
+
+export { pageMenus, notification, activities, contacts, stats, revenueByLocation, productsTableHead, productsTableData, totalSales};
