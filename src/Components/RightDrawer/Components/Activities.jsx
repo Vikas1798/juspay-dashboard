@@ -14,7 +14,7 @@ const Activities = () => {
                             <img src={d?.image} alt="" className='w-[24px] h-[24px] rounded-full object-cover' />
                             {
                                 (activities?.length - 1 !== i) &&
-                                <div className='h-[15px] w-[1px] bg-[#1C1C1C1A]  absolute top-[80%] my-2'></div>
+                                <div className='h-[15px] w-[1px] bg-[#1C1C1C1A] dark:bg-[#FFFFFF1A]  absolute top-[80%] my-2'></div>
                             }
                         </figure>
                         <MessageTime message={d?.message} time={d?.time} />

@@ -144,28 +144,32 @@ const stats = [
         name:'Customers',
         revenue:'3,781',
         profitLoss:'+11.01%',
-        bg:"bg-[#E3F5FF]",
+        bg:"bg-[#E3F5FF] dark:bg-[#E3F5FF]",
+        color:"text-[#1C1C1C]",
         status:1
     },
     {
         name:'Orders',
         revenue:'1,219',
         profitLoss:'-0.03%',
-        bg:'bg-[#F7F9FB]',
+        bg:'bg-[#F7F9FB] dark:bg-[#FFFFFF1A]',
+        color:"text-[#1C1C1C] dark:text-[#FFFFFF]",
         status:0
     },
     {
         name:'Revenue',
         revenue:'$695',
         profitLoss:'+15.03%',
-        bg:'bg-[#F7F9FB]',
+        bg:'bg-[#F7F9FB] dark:bg-[#FFFFFF1A]',
+        color:"text-[#1C1C1C] dark:text-[#FFFFFF]",
         status:1
     },
     {
         name:'Growth',
         revenue:'30.1%',
         profitLoss:'+6.08%',
-        bg:'bg-[#E5ECF6]',
+        bg:'bg-[#E5ECF6] dark:bg-[#E5ECF6]',
+        color:"text-[#1C1C1C] ",
         status:1
     }
 ]
@@ -246,7 +250,7 @@ const totalSales = [
     {
         by:'Direct',
         price:'$300.56',
-        color:'text-[#1C1C1C]'
+        color:'text-[#1C1C1C] dark:text-[#C6C7F8]'
     },
     {
         by:'Affilliate',
@@ -335,7 +339,52 @@ const orderListData = [
         address:'Nest Lane Olivette',
         date:'Feb 2, 2023',
         status:0
-    }
+    },
+    {
+        _id:'#CM9806',
+        name:'Natali Craig',
+        image:image6,
+        project:'Landing Page',
+        address:'Meadow Lane Oakland',
+        date:'Just now',
+        status:3
+    },
+    {
+        _id:'#CM9807',
+        name:'Kate Morrison',
+        image:image7,
+        project:'CRM Admin pages',
+        address:'Larry San Francisco',
+        date:'A minute ago',
+        status:1
+    },
+    {
+        _id:'#CM9808',
+        name:'Drew Cano',
+        image:image8,
+        project:'Client Project',
+        address:'Bagwell Avenue Ocala',
+        date:'1 hour ago',
+        status:4
+    },
+    {
+        _id:'#CM9809',
+        name:'Orlando Diggs',
+        image:image9,
+        project:'Admin Dashboard',
+        address:'Washburn Baton Rouge',
+        date:'Yesterday',
+        status:2
+    },
+    {
+        _id:'#CM98010',
+        name:'Orlando Diggs',
+        image:image10,
+        project:'App Landing Page',
+        address:'Nest Lane Olivette',
+        date:'Feb 2, 2023',
+        status:0
+    },
 ]
 
 export { pageMenus, notification, activities, contacts, stats, revenueByLocation, productsTableHead, productsTableData, totalSales, orderListHead, orderListData};

@@ -9,11 +9,11 @@ const Stats = () => {
                 {
                     stats?.map((d, i) => (
                         <div className={`${d?.bg} rounded-2xl p-5`} key={i}>
-                            <h6 className='text-sm font-semibold text-[#1C1C1C] mb-1 hover:bg-[#1C1C1C0D] rounded-md'>{d?.name}</h6>
+                            <h6 className={`text-sm font-semibold ${d?.color} mb-1 hover:bg-[#1C1C1C0D] rounded-md`}>{d?.name}</h6>
                             <div className='flex items-center justify-between hover:bg-[#1C1C1C0D] rounded-md hover:flex-row-reverse'>
-                                <h6 className='text-2xl font-semibold text-[#1C1C1C]'>{d?.revenue}</h6>
+                                <h6 className={`text-2xl font-semibold ${d?.color}`}>{d?.revenue}</h6>
                                 <div className='flex items-center gap-2'>
-                                    <p className='text-xs font-normal text-[#1C1C1C]'>{d?.profitLoss}</p>
+                                    <p className={`text-xs font-normal ${d?.color}`}>{d?.profitLoss}</p>
                                     {
                                         d?.status ?
                                             <TrendingUp size={14} strokeWidth={1.5} className="text-[#1C1C1C]" /> :
@@ -25,7 +25,9 @@ const Stats = () => {
                     ))
                 }
             </div>
-            <div className='bg-[#F7F9FB]'>Projections vs Actuals</div>
+            <div className='bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5'>
+                <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Projections vs Actuals</h6>
+            </div>
         </section>
     )
 }
