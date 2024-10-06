@@ -266,4 +266,76 @@ const totalSales = [
 ]
 
 
-export { pageMenus, notification, activities, contacts, stats, revenueByLocation, productsTableHead, productsTableData, totalSales};
+// order list head label
+const orderListHead = [
+    {
+        label:'Order ID'
+    },
+    {
+        label:'User'
+    },
+    {
+        label:'Project'
+    },
+    {
+        label:'Address'
+    },
+    {
+        label:'Date'
+    },
+    {
+        label:'Status'
+    }
+]
+
+//order list data
+//Rejected:0 ,Complete: 1, Approved: 2, In Progress :3, Pending:4
+const orderListData = [
+    {
+        _id:'#CM9801',
+        name:'Natali Craig',
+        image:image1,
+        project:'Landing Page',
+        address:'Meadow Lane Oakland',
+        date:'Just now',
+        status:3
+    },
+    {
+        _id:'#CM9802',
+        name:'Kate Morrison',
+        image:image2,
+        project:'CRM Admin pages',
+        address:'Larry San Francisco',
+        date:'A minute ago',
+        status:1
+    },
+    {
+        _id:'#CM9803',
+        name:'Drew Cano',
+        image:image3,
+        project:'Client Project',
+        address:'Bagwell Avenue Ocala',
+        date:'1 hour ago',
+        status:4
+    },
+    {
+        _id:'#CM9804',
+        name:'Orlando Diggs',
+        image:image4,
+        project:'Admin Dashboard',
+        address:'Washburn Baton Rouge',
+        date:'Yesterday',
+        status:2
+    },
+    {
+        _id:'#CM9805',
+        name:'Orlando Diggs',
+        image:image5,
+        project:'App Landing Page',
+        address:'Nest Lane Olivette',
+        date:'Feb 2, 2023',
+        status:0
+    }
+]
+
+export { pageMenus, notification, activities, contacts, stats, revenueByLocation, productsTableHead, productsTableData, totalSales, orderListHead, orderListData};

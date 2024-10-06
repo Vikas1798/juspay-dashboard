@@ -53,7 +53,7 @@ const Header = () => {
                         value={state.searchParam}
                         placeholder='Search'
                         onChange={(e) => updateInput(e)}
-                        className='text-[#1C1C1C33] border-none outline-none bg-transparent  w-[100px]  text-xs'
+                        className='text-[#1C1C1C33] border-none outline-none bg-transparent  w-[100px]  text-xs opacity-[0.6]'
                     />
                     <Slack size={14} strokeWidth={2} className="text-[#1C1C1C33]" />
                 </div>
