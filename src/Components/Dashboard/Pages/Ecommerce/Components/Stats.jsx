@@ -1,8 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { stats } from '../../../../../Database/db'
 import { TrendingDown, TrendingUp } from 'lucide-react'
+import ReactApexChart from "react-apexcharts";
 
 const Stats = () => {
+    const [chartData] = useState({
+        series: [
+            {
+                name: "Sales",
+                data: [120, 100, 200, 90, 170, 160]
+            }
+        ],
+        options: {
+            chart: {
+                type: 'bar',
+                height: 200,
+                toolbar: {
+                    show: true,
+                    tools: {
+                        download: false
+                    }
+                }
+            },
+            xaxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                labels: {
+                    style: {
+                        colors: '#A8C5DA',
+                    },
+                },
+            },
+            yaxis: {
+                labels: {
+                    style: {
+                        colors: '#A8C5DA',
+                    },
+                },
+            },
+            colors: '#A8C5DA',
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '40%',
+                    endingShape: 'rounded'
+                },
+            },
+            dataLabels: {
+                enabled: false,
+                colors: '#BAEDBD',
+            },
+            legend: {
+                show: false,
+            },
+            stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
+            },
+
+            fill: {
+                opacity: 1
+            },
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return val + "M";
+                    }
+                }
+            }
+        },
+
+    });
+
     return (
         <section className='grid grid-cols-1 xl:grid-cols-2 gap-4'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -27,6 +96,15 @@ const Stats = () => {
             </div>
             <div className='bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Projections vs Actuals</h6>
+                <div className="w-full mx-auto overflow-hidden">
+                    <ReactApexChart
+                        options={chartData.options}
+                        series={chartData.series}
+                        type="bar"
+                        height={150}
+                        className='w-full'
+                    />
+                </div>
             </div>
         </section>
     )
