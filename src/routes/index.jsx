@@ -1,11 +1,14 @@
-import React from "react";
+import React, { Suspense, lazy } from 'react';
 import { useRoutes } from "react-router-dom";
-import LeftDrawer from '../Components/LeftDrawer';
-import RightDrawer from '../Components/RightDrawer';
 import Ecommerce from "../Components/Dashboard/Pages/Ecommerce";
 import Order from "../Components/Dashboard/Pages/Order";
-import Header from "../Components/Dashboard/Components/Header";
-import PageNotFound from "../BasicComponents/PageNotFound";
+import FallbackLoading from '../BasicComponents/FallbackLoading';
+import PageNotFound from '../BasicComponents/PageNotFound';
+
+const LeftDrawer = lazy(() => import('../Components/LeftDrawer'));
+const RightDrawer = lazy(() => import('../Components/RightDrawer'));
+const Header = lazy(() => import("../Components/Dashboard/Components/Header"));
+
 
 export default function Routes(props) {
     const routes = useRoutes([
@@ -23,15 +26,18 @@ export default function Routes(props) {
         },
     ]);
     return (
-        <section className='scroll-smooth grid grid-cols-12 items-start dark:bg-[#1C1C1C]'>
-            <LeftDrawer />
-            <div className='col-span-12 xl:col-span-8 border-x-[1px] border-x-[#1C1C1C1A] dark:border-x-[#FFFFFF33]'>
-                <Header />
-                <div className='p-4'>
-                    {routes}
+        <Suspense fallback={<FallbackLoading />}>
+            <section className='scroll-smooth grid grid-cols-12 items-start dark:bg-[#1C1C1C]'>
+                <LeftDrawer />
+                <div className='col-span-12 xl:col-span-8 border-x-[1px] border-x-[#1C1C1C1A] dark:border-x-[#FFFFFF33]'>
+                    <Header />
+                    <div className='p-4'>
+                        {routes}
+                    </div>
                 </div>
-            </div>
-            <RightDrawer />
-        </section>
+                <RightDrawer />
+            </section>
+        </Suspense>
+
     );
 }

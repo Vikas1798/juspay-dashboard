@@ -29,7 +29,7 @@ const pageMenus = {
             icon:ShieldEllipsis,
             children:[
                     {
-                        name:'Test'
+                        name:'Test1'
                     },
             ]
         },
@@ -48,7 +48,7 @@ const pageMenus = {
             icon:ShieldEllipsis,
             children:[
                 {
-                    name:'Test'
+                    name:'Test1'
                 },
             ]
         }

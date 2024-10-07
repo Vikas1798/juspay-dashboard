@@ -7,7 +7,6 @@ const MenuPage = lazy(() => import('./Components/MenuPage'));
 
 
 const LeftDrawer = () => {
-
     let tabs = [
         {
             name: 'Favorites',

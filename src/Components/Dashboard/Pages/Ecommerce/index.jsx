@@ -1,17 +1,20 @@
-import React from 'react'
-import Stats from './Components/Stats';
-import RevenueStats from './Components/RevenueStats';
-import TopProducts from './Components/TopProducts';
+import React, { Suspense, lazy } from 'react';
+import FallbackLoading from '../../../../BasicComponents/FallbackLoading';
 
+const Stats = lazy(() => import('./Components/Stats'));
+const RevenueStats = lazy(() => import('./Components/RevenueStats'));
+const TopProducts = lazy(() => import('./Components/TopProducts'));
 
 const Ecommerce = () => {
     return (
-        <div className='grid gap-y-5'>
-            <h2 className='text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]'>eCommerce</h2>
-            <Stats />
-            <RevenueStats />
-            <TopProducts />
-        </div>
+        <Suspense fallback={<FallbackLoading />}>
+            <div className='grid gap-y-5'>
+                <h2 className='text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]'>eCommerce</h2>
+                <Stats />
+                <RevenueStats />
+                <TopProducts />
+            </div>
+        </Suspense>
     )
 }
 
