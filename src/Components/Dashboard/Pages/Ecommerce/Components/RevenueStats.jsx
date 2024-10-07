@@ -1,5 +1,5 @@
 import React from 'react'
-import { revenueByLocation, totalSales } from '../../../../../Database/db'
+import { revenueByLocation } from '../../../../../Database/db'
 
 const RevenueStats = () => {
     return (
@@ -22,14 +22,12 @@ const RevenueStats = () => {
                                 </div>
                                 <div className='absolute bottom-0 w-full'>
                                     <div className="relative h-[2px] rounded-full bg-[#E5ECF6] dark:bg-[#1C1C1C33]">
-                                        <div className="h-full  rounded-full bg-[#A8C5DA] dark:bg-[#A8C5DA]" style={{ width: `${d?.revenue}%` }}>
+                                        <div className="h-full  rounded-full bg-[#A8C5DA] dark:bg-[#A8C5DA] " style={{ width: `${d?.revenue}%` }}>
                                             <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-white"></span>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                         ))
                     }
                 </div>
