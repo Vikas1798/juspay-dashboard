@@ -1,16 +1,13 @@
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./routes";
 import './App.css'
-import Dashboard from './Components/Dashboard';
-import LeftDrawer from './Components/LeftDrawer';
-import RightDrawer from './Components/RightDrawer';
 
-function App() {
+const App = (props) => {
     return (
-        <section className='scroll-smooth grid grid-cols-12 items-start dark:bg-[#1C1C1C]'>
-            <LeftDrawer />
-            <Dashboard />
-            <RightDrawer />
-        </section>
-    )
-}
-
+        <Router>
+            <Routes {...props} />
+        </Router>
+    );
+};
 export default App;

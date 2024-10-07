@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import { ShieldEllipsis, PanelsTopLeft, FolderOpenDot, BookOpenText, ChevronRight, ListOrdered } from 'lucide-react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
+    const location = useLocation();
+    const urlBarString = location?.pathname?.split("/");
+    const navigate = useNavigate();
     const [state, setState] = useState({
-        currentSegment: 'default'
+        currentSegment: ''
     })
 
     let list = [
         {
             name: 'Default',
             icon: ShieldEllipsis,
-            slug: 'default'
+            slug: ''
         },
         {
             name: 'Orders',
@@ -32,28 +36,28 @@ const Dashboard = () => {
         {
             name: 'Online Courses',
             icon: BookOpenText,
-            slug: 'onlineCourses'
+            slug: 'online-courses'
         }
     ]
 
-    const handleData = (key) => {
-        setState((prev) => {
-            return {
-                ...prev,
-                currentSegment: key
-            }
-        })
-    }
-
+    // const handleData = (key) => {
+    //     setState((prev) => {
+    //         return {
+    //             ...prev,
+    //             currentSegment: key ?? ''
+    //         }
+    //     })
+    // }
+    // onMouseEnter={handleData} onMouseLeave={() => handleData(d.slug)}
     return (
         <div>
             <h2 className='text-[#1C1C1C66] text-sm font-normal px-2 mb-1 dark:text-[#FFFFFF66]'>Dashboards</h2>
             <>
                 {
                     list?.map((d, i) => (
-                        <div key={i} onMouseEnter={() => handleData(d.slug)} className={`${d?.slug === state?.currentSegment ? 'bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]' : ''} relative flex items-center py-[2px] rounded-[8px] cursor-pointer mb-1`}>
+                        <div onClick={() => navigate(d?.slug)} key={i} className={`hover:bg-[#1C1C1C0D] hover:dark:bg-[#FFFFFF1A] group ${urlBarString[1] === d?.slug ? ' bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]' : ''} relative flex items-center py-[2px] rounded-[8px] cursor-pointer mb-1`}>
                             {
-                                d?.slug === state?.currentSegment && <div className='h-[14px] w-[3px] absolute left-0 bg-[#1C1C1C] rounded-[1px] dark:bg-[#C6C7F8]'></div>
+                                urlBarString[1] === d?.slug && <div className='h-[14px] w-[3px] absolute left-0 bg-[#1C1C1C] rounded-[1px] group-hover: dark:bg-[#C6C7F8]'></div>
                             }
                             <div className='flex items-center pl-4'>
                                 <ChevronRight size={14} strokeWidth={1.5} className={`text-[#1C1C1C33] dark:text-[#FFFFFF33] ${d?.slug === state?.currentSegment ? 'invisible' : ''}`} />

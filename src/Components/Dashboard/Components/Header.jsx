@@ -78,7 +78,7 @@ const Header = () => {
                 <AppWindow size={24} strokeWidth={1.5} className="hidden md:flex text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
                 <Star size={24} strokeWidth={1.5} className="hidden md:flex text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A]" />
                 <img src={image4} alt="" className='md:hidden flex w-[20px] h-[20px] rounded-full object-cover' />
-                <Breadcrumb segment="Default" />
+                <Breadcrumb />
             </div>
             <div className='hidden md:flex items-center gap-2 md:gap-4'>
                 <div className='flex items-center bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A] gap-1 px-2 py-1 rounded-lg'>

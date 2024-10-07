@@ -111,7 +111,6 @@ const Order = () => {
     }
 
     let { checkedData, page, checkAll } = state;
-    console.log('checkedData', checkedData)
     return (
         <main className='grid gap-y-5'>
             <h2 className='text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]'>Order List</h2>
