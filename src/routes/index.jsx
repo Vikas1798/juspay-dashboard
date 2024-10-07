@@ -26,18 +26,18 @@ export default function Routes(props) {
         },
     ]);
     return (
-        <Suspense fallback={<FallbackLoading />}>
-            <section className='scroll-smooth grid grid-cols-12 items-start dark:bg-[#1C1C1C]'>
-                <LeftDrawer />
-                <div className='col-span-12 xl:col-span-8 border-x-[1px] border-x-[#1C1C1C1A] dark:border-x-[#FFFFFF33]'>
-                    <Header />
-                    <div className='p-4'>
-                        {routes}
-                    </div>
+        // <Suspense fallback={<FallbackLoading />}>
+        <section className='scroll-smooth grid grid-cols-12 items-start dark:bg-[#1C1C1C]'>
+            <LeftDrawer />
+            <div className='col-span-12 xl:col-span-8 border-x-[1px] border-x-[#1C1C1C1A] dark:border-x-[#FFFFFF33]'>
+                <Header />
+                <div className='p-4'>
+                    {routes}
                 </div>
-                <RightDrawer />
-            </section>
-        </Suspense>
+            </div>
+            <RightDrawer />
+        </section>
+        // </Suspense>
 
     );
 }
