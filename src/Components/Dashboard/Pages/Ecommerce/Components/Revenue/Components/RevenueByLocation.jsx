@@ -1,12 +1,9 @@
 import React from 'react'
-import { revenueByLocation, totalSales } from '../../../../../Database/db'
+import { revenueByLocation } from '../../../../../../../Database/db'
 
-const RevenueStats = () => {
+const RevenueByLocation = () => {
     return (
-        <main className='grid gap-5 grid-cols-1 md:grid-cols-4'>
-            <div className='md:col-span-3 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5'>
-                <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Revenue</h6>
-            </div>
+        <>
             <div className='md:col-span-1 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5 h-fit'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Revenue by Location</h6>
                 <div className='mt-2'>
@@ -39,8 +36,8 @@ const RevenueStats = () => {
                     <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-white"></span>
                 </div>
             </div> */}
-        </main>
+        </>
     )
 }
 
-export default RevenueStats
+export default RevenueByLocation

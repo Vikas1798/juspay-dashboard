@@ -1,6 +1,7 @@
 import React from 'react'
 import { productsTableData, productsTableHead, totalSales } from '../../../../../Database/db'
 import { Dot } from 'lucide-react';
+import Chart from './Chart';
 
 const TopProducts = () => {
     return (
@@ -34,7 +35,9 @@ const TopProducts = () => {
             <div className='md:col-span-1 bg-[#F7F9FB] rounded-2xl p-5 h-fit dark:bg-[#FFFFFF1A]'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Total Sales</h6>
                 <div className='mt-2'>
-                    <div className='w-[120px] h-[120px] bg-gray-200 rounded-full mx-auto my-2'></div>
+                    {/* <div className='w-[120px] h-[120px] bg-gray-200 rounded-full mx-auto my-2'></div> */}
+                    {/* Donut Chart */}
+                    <Chart />
                     {
                         totalSales?.map((d, i) => (
                             <div className='flex justify-between items-center py-2 last:pb-0' key={i}>
