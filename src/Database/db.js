@@ -50,6 +50,12 @@ const pageMenus = {
                 {
                     name:'Test1'
                 },
+                {
+                    name:'Test2'
+                },
+                {
+                    name:'Test3'
+                },
             ]
         }
     ]
