@@ -5,7 +5,7 @@ import Contacts from './Components/Contacts'
 
 const RightDrawer = () => {
     return (
-        <div className='col-span-2 p-5 hidden  xl:grid gap-y-4 h-auto'>
+        <div className='col-span-2 p-5 hidden  xl:grid gap-y-4 h-auto sticky top-0'>
             <Notification />
             <Activities />
             <Contacts />

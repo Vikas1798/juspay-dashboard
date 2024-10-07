@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { ArrowDownUp, ChevronLeft, ChevronRight, ClipboardList, Dot, Ellipsis, Plus, Search, Slack, Square, SquareCheck, Text } from 'lucide-react';
 import { orderListData, orderListHead } from '../../../../Database/db';
+import { useSelector } from 'react-redux';
 
 const Order = () => {
+    const appTheme = useSelector(d => d?.theme?.mode ?? false);
+
     // let's assume we have 5 page orders lists
     let allOrderPages = [1, 2, 3, 4, 5];
 
     const [state, setState] = useState({
         checkedData: ['#CM9801', '#CM9803', '#CM9804'],
+        checkAll: false,
         page: 1,
-        orderName: ""
+        orderName: "",
     })
 
     // order status enums
@@ -73,7 +77,41 @@ const Order = () => {
         })
     }
 
-    let { checkedData, page } = state;
+    // select/ un-select order list
+    const handleCheckData = (id) => {
+        let { checkedData } = state;
+        if (checkedData.includes(id)) {
+            checkedData = checkedData?.filter(d => d !== id);
+        } else {
+            checkedData.push(id)
+        }
+        setState((prev) => {
+            return {
+                ...prev,
+                checkedData: checkedData
+            }
+        })
+    }
+
+    const handleCheckAllData = (key) => {
+        let { checkedData } = state;
+        let data = []
+        for (let i = 0; i < orderListData.length; i++) {
+            if (!checkedData.includes(orderListData[i]._id)) {
+                data.push(orderListData[i]._id)
+            }
+        }
+        setState((prev) => {
+            return {
+                ...prev,
+                checkedData: key ? [...prev.checkedData, ...data] : [],
+                checkAll: key
+            }
+        })
+    }
+
+    let { checkedData, page, checkAll } = state;
+    console.log('checkedData', checkedData)
     return (
         <main className='grid gap-y-5'>
             <h2 className='text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]'>Order List</h2>
@@ -99,7 +137,12 @@ const Order = () => {
                 <thead>
                     <tr className='border-b-[1px] p-3'>
                         <th className='text-start font-normal text-[#1C1C1C66] dark:text-[#FFFFFF66] text-xs py-2 flex items-center justify-center '>
-                            <Square size={14} strokeWidth={1} className='text-[#1C1C1C33] dark:text-[#FFFFFF66]' />
+                            {
+                                checkAll ?
+                                    <SquareCheck fill={appTheme ? '#C6C7F8' : '#1C1C1C'} onClick={() => handleCheckAllData(false)} size={14} strokeWidth={1} className='text-[#FFFFFF] dark:text-[#1C1C1C] dark:text-[#FFFFFF66] cursor-pointer' />
+                                    :
+                                    <Square onClick={() => handleCheckAllData(true)} size={14} strokeWidth={1} className='text-[#1C1C1C33] dark:text-[#FFFFFF66] cursor-pointer' />
+                            }
                         </th>
                         {
                             orderListHead?.map((d, i) => (
@@ -115,8 +158,8 @@ const Order = () => {
                                 <td className='text-start flex items-center justify-center font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs py-2 cursor-pointer group-hover:rounded-l-lg'>
                                     {
                                         checkedData.includes(d._id) ?
-                                            <SquareCheck size={14} strokeWidth={1} className='text-[#1C1C1C] dark:text-[#C6C7F8]' /> :
-                                            <Square size={14} strokeWidth={1} className='text-[#1C1C1C33] dark:text-[#FFFFFF66]' />
+                                            <SquareCheck onClick={() => handleCheckData(d._id)} fill={appTheme ? '#C6C7F8' : '#1C1C1C'} size={14} strokeWidth={1} className='text-[#FFFFFF] dark:text-[#1C1C1C]' /> :
+                                            <Square onClick={() => handleCheckData(d._id)} size={14} strokeWidth={1} className='text-[#1C1C1C33] dark:text-[#FFFFFF66]' />
                                     }
                                 </td>
                                 <td className='text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] py-2'>
