@@ -10,31 +10,43 @@ const TopProducts = () => {
 
     return (
         <main className='grid gap-5 grid-cols-1 md:grid-cols-4'>
-            <div className='md:col-span-3 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5 h-fit'>
+            <div className='md:col-span-3 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Top Selling Products</h6>
-                <table className="table-auto mt-2 w-full">
-                    <thead>
-                        <tr className='border-b-[1px] p-3 dark:border-b-[#FFFFFF33]'>
+
+                {/* Top Selling Products table */}
+                <div className="relative overflow-x-auto mt-2">
+                    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead>
+                            <tr className='border-b-[1px] p-3 dark:border-b-[#FFFFFF33]'>
+                                {
+                                    productsTableHead?.map((d, i) => (
+                                        <th key={i} className='text-start font-normal text-[#1C1C1C66] dark:text-[#FFFFFF66] text-xs py-2'>{d.label}</th>
+                                    ))
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
                             {
-                                productsTableHead?.map((d, i) => (
-                                    <th key={i} className='text-start font-normal text-[#1C1C1C66] dark:text-[#FFFFFF66] text-xs py-2'>{d.label}</th>
+                                productsTableData?.map((d, i) => (
+                                    <tr key={i} className=" hover:bg-[#F7F9FB] dark:hover:bg-[#FFFFFF0D] group">
+                                        <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                            {d?.name}
+                                        </td>
+                                        <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                            {d?.price}
+                                        </td>
+                                        <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                            {d?.quantity}
+                                        </td>
+                                        <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                            {d?.amount}
+                                        </td>
+                                    </tr>
                                 ))
                             }
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            productsTableData?.map((d, i) => (
-                                <tr key={i}>
-                                    <td className='text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs py-2'>{d?.name}</td>
-                                    <td className='text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF]  text-xs py-2'>{d?.price}</td>
-                                    <td className='text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF]  text-xs py-2'>{d?.quantity}</td>
-                                    <td className='text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF]  text-xs py-2'>{d?.amount}</td>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div className='md:col-span-1 bg-[#F7F9FB] rounded-2xl p-5 h-fit dark:bg-[#FFFFFF1A]'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Total Sales</h6>
@@ -45,6 +57,8 @@ const TopProducts = () => {
                     </div>
                     {/* Donut Chart package */}
                     {/* <Chart /> */}
+
+                    {/* Total Sales graph UI */}
                     {
                         totalSales?.map((d, i) => (
                             <div className='flex justify-between items-center py-2 last:pb-0' key={i}>

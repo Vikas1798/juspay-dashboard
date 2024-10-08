@@ -248,6 +248,12 @@ const productsTableData = [
         quantity:'64',
         amount:'$1,965.81'
     },
+    {
+        name: 'ASOS Ridley High Waist',
+        price:'$79.49',
+        quantity:'82',
+        amount:'$6,518.18'
+    }
 ]
 
 
