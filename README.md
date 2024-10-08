@@ -12,7 +12,7 @@
     - git clone https://github.com/Vikas1798/juspay-dashboard.git
 
 2. Navigate to the Cloned Repository
-    - cd <name of the repo>
+    - cd filename
 
 3. Install Dependencies
     - yarn
@@ -21,5 +21,4 @@
     - yarn run dev
 
 ### Live Demo
-    [View Deployed Project on Vercel]
-    Link : https://juspay-dashboard-app.vercel.app/
+    https://juspay-dashboard-app.vercel.app/
