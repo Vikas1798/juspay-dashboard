@@ -88,7 +88,7 @@ const Header = () => {
     ]
 
     const urlBarString = location?.pathname?.split("/")?.filter((d) => d);
-    console.log('urlBarString', urlBarString)
+
     return (
         <div className={`flex items-center justify-between border-b-[1px] border-b-[#1C1C1C1A] dark:border-b-[#FFFFFF33] p-4 z-10 sticky top-0 transition-transform duration-500 ${state?.showNav} `}>
             <div className='flex items-center gap-2 md:gap-4'>

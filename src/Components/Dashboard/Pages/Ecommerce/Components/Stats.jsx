@@ -78,7 +78,7 @@ const Stats = () => {
 
     return (
         <section className='grid grid-cols-1 xl:grid-cols-2 gap-4'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade'>
                 {
                     stats?.map((d, i) => (
                         <div className={`${d?.bg} rounded-2xl p-5 flex justify-around flex-col transition-transform hover:scale-105 duration-500 ease-in-out`} key={i}>
@@ -98,7 +98,7 @@ const Stats = () => {
                     ))
                 }
             </div>
-            <div className='bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5'>
+            <div className='bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5 animate-fade'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Projections vs Actuals</h6>
                 {/* BarChart svg image */}
                 <figure className='w-full h-full my-3'>

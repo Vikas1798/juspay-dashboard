@@ -60,7 +60,7 @@ const Order = () => {
     let { page } = state;
     return (
         <Suspense fallback={<FallbackLoading />}>
-            <main className='grid gap-y-5'>
+            <main className='grid gap-y-5 animate-fade'>
                 <h2 className='text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]'>Order List</h2>
                 <div className='bg-[#F7F9FB] dark:bg-[#FFFFFF1A] flex items-center justify-between p-2 rounded-lg'>
                     <div className='flex items-center gap-4'>

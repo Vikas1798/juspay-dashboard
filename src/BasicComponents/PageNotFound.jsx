@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const PageNotFound = () => {
     const navigate = useNavigate();
     return (
-        <section className='flex flex-col items-center justify-center my-20 text-center h-[200px] md:h-[500px]'>
+        <section className='flex flex-col items-center justify-center my-20 text-center h-[200px] md:h-[500px] animate-fade'>
             <h1 className='text-2xl md:text-4xl font-bold text-primary  dark:text-[#FFF]'>404</h1>
             <h6 className='text-xl md:text-2xl font-bold  text-primary dark:text-[#FFFFFF66]'>Sorry, the page was not found</h6>
             <p className='text-sm font-normal text-primary dark:text-[#FFFFFF66]'>The link you followed has probably broken or the page has been removed.</p>

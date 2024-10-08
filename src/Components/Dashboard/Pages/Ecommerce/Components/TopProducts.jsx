@@ -10,7 +10,7 @@ const TopProducts = () => {
 
     return (
         <main className='grid gap-5 grid-cols-1 md:grid-cols-4'>
-            <div className='md:col-span-3 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5'>
+            <div className='md:col-span-3 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5 animate-fade'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Top Selling Products</h6>
 
                 {/* Top Selling Products table */}
@@ -48,7 +48,7 @@ const TopProducts = () => {
                     </table>
                 </div>
             </div>
-            <div className='md:col-span-1 bg-[#F7F9FB] rounded-2xl p-5 h-fit dark:bg-[#FFFFFF1A]'>
+            <div className='md:col-span-1 bg-[#F7F9FB] rounded-2xl p-5 h-fit dark:bg-[#FFFFFF1A] animate-fade'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Total Sales</h6>
                 <div className='mt-2'>
                     {/* Donut Chart svg image */}

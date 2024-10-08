@@ -8,7 +8,7 @@ const RevenueByLocation = () => {
 
     return (
         <>
-            <div className='col-span-full md:col-span-1 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5 h-full'>
+            <div className='col-span-full md:col-span-1 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5 h-full animate-fade'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Revenue by Location</h6>
                 <div>
                     <div className='w-full  rounded-md mx-auto my-2'>
