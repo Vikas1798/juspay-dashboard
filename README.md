@@ -1,10 +1,12 @@
 # Juspay dashboard app
 
 ## Tech Stack
+- HTML/CSS
+- Tailwind
+- JavaScript
 - React + Vite
-- Tailwind CSS / CSS
-- React Router Dom
 - Redux-Toolkit
+- React Router Dom
 - react-apexcharts
 - Vercel for deployment
 
@@ -13,7 +15,7 @@
     - git clone https://github.com/Vikas1798/juspay-dashboard.git
 
 2. Navigate to the Cloned Repository
-    - cd filename
+    - cd your-repo-name
 
 3. Install Dependencies
     - yarn
