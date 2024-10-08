@@ -5,6 +5,7 @@
 - Tailwind CSS / CSS
 - React Router Dom
 - Redux-Toolkit
+- react-apexcharts
 - Vercel for deployment
 
 ### Installation:
@@ -22,3 +23,6 @@
 
 ### Live Demo
     https://juspay-dashboard-app.vercel.app/
+
+## Screenshots
+![Home Page Screenshot](https://github.com/Vikas1798/juspay-dashboard/src/assets/ProjectImage/1.png)
