@@ -25,4 +25,4 @@
     https://juspay-dashboard-app.vercel.app/
 
 ## Screenshots
-![Home Page Screenshot](https://github.com/Vikas1798/juspay-dashboard/src/assets/ProjectImage/1.png)
+![Home Page Screenshot](https://github.com/Vikas1798/juspay-dashboard/blob/master/src/assets/ProjectImage/1.png)
