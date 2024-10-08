@@ -49,7 +49,7 @@ const LeftDrawer = () => {
                             segments?.map((d, i) => (
                                 <div key={i} className='flex items-center p-1 px-2  cursor-pointer'>
                                     <div className='w-[5px] h-[5px] bg-[#1C1C1C33] rounded-full dark:bg-[#FFFFFF66]'></div>
-                                    <p className='flex justify-center text-sm font-normal  text-[#1C1C1C] pl-2 dark:text-[#FFFFFF]'>
+                                    <p className='flex justify-center text-sm font-normal  text-primary pl-2 dark:text-[#FFFFFF]'>
                                         {d.name}
                                     </p>
                                 </div>

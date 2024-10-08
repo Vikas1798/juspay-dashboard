@@ -6,6 +6,7 @@ const Items = ({ data }) => {
         isOpen: false
     })
 
+    //open for children menu 
     const viewChildMenu = () => (
         setState((prev) => {
             return {
@@ -20,7 +21,7 @@ const Items = ({ data }) => {
             <div className='flex items-center pl-5 py-[2px] rounded-[8px] cursor-pointer ' onClick={() => data?.children?.length !== 0 && viewChildMenu()}>
                 {data?.children && <ChevronRight size={14} strokeWidth={1.5} className={`text-[#1C1C1C33] dark:text-[#FFFFFF33]  ${state.isOpen ? 'rotate-90' : ''}`} />}
                 {
-                    data.icon && <data.icon size={16} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF]" />
+                    data.icon && <data.icon size={16} strokeWidth={1.5} className="text-primary dark:text-[#FFFFFF]" />
                 }
                 <p className='text-sm font-normal pl-1 line-clamp-1 dark:text-[#FFFFFF] transition-transform hover:scale-105 duration-500 ease-in-out'>{data?.name}</p>
             </div>

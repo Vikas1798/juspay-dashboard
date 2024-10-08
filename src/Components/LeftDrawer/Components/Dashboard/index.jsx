@@ -25,13 +25,11 @@ const Dashboard = () => {
             name: 'eCommerce',
             icon: PanelsTopLeft,
             slug: 'ecommerce'
-
         },
         {
             name: 'Projects',
             icon: FolderOpenDot,
             slug: 'projects'
-
         },
         {
             name: 'Online Courses',
@@ -40,15 +38,6 @@ const Dashboard = () => {
         }
     ]
 
-    // const handleData = (key) => {
-    //     setState((prev) => {
-    //         return {
-    //             ...prev,
-    //             currentSegment: key ?? ''
-    //         }
-    //     })
-    // }
-    // onMouseEnter={handleData} onMouseLeave={() => handleData(d.slug)}
     return (
         <div>
             <h2 className='text-[#1C1C1C66] text-sm font-normal px-2 mb-1 dark:text-[#FFFFFF66]'>Dashboards</h2>
@@ -61,7 +50,7 @@ const Dashboard = () => {
                             }
                             <div className='flex items-center pl-4'>
                                 <ChevronRight size={14} strokeWidth={1.5} className={`text-[#1C1C1C33] dark:text-[#FFFFFF33] ${d?.slug === state?.currentSegment ? 'invisible' : ''}`} />
-                                <d.icon size={16} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF]" />
+                                <d.icon size={16} strokeWidth={1.5} className="text-primary dark:text-[#FFFFFF]" />
                                 <p className='text-sm font-normal pl-1 dark:text-[#FFFFFF]'>{d?.name}</p>
                             </div>
                         </div>

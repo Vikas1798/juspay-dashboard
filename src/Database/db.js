@@ -151,7 +151,7 @@ const stats = [
         revenue:'3,781',
         profitLoss:'+11.01%',
         bg:"bg-[#E3F5FF] dark:bg-[#E3F5FF]",
-        color:"text-[#1C1C1C]",
+        color:"text-primary",
         status:1
     },
     {
@@ -159,7 +159,7 @@ const stats = [
         revenue:'1,219',
         profitLoss:'-0.03%',
         bg:'bg-[#F7F9FB] dark:bg-[#FFFFFF1A]',
-        color:"text-[#1C1C1C] dark:text-[#FFFFFF]",
+        color:"text-primary dark:text-[#FFFFFF]",
         status:0
     },
     {
@@ -167,7 +167,7 @@ const stats = [
         revenue:'$695',
         profitLoss:'+15.03%',
         bg:'bg-[#F7F9FB] dark:bg-[#FFFFFF1A]',
-        color:"text-[#1C1C1C] dark:text-[#FFFFFF]",
+        color:"text-primary dark:text-[#FFFFFF]",
         status:1
     },
     {
@@ -175,7 +175,7 @@ const stats = [
         revenue:'30.1%',
         profitLoss:'+6.08%',
         bg:'bg-[#E5ECF6] dark:bg-[#E5ECF6]',
-        color:"text-[#1C1C1C] ",
+        color:"text-primary",
         status:1
     }
 ]

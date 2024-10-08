@@ -29,16 +29,16 @@ const TopProducts = () => {
                             {
                                 productsTableData?.map((d, i) => (
                                     <tr key={i} className=" hover:bg-[#F7F9FB] dark:hover:bg-[#FFFFFF0D] group">
-                                        <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                        <td className="pr-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs whitespace-nowrap">
                                             {d?.name}
                                         </td>
-                                        <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                        <td className="pr-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs whitespace-nowrap">
                                             {d?.price}
                                         </td>
-                                        <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                        <td className="pr-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs whitespace-nowrap">
                                             {d?.quantity}
                                         </td>
-                                        <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                        <td className="pr-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs whitespace-nowrap">
                                             {d?.amount}
                                         </td>
                                     </tr>

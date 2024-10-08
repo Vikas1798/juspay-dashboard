@@ -39,7 +39,7 @@ const Header = () => {
                 setState((prev) => {
                     return {
                         ...prev,
-                        showNav: "bg-[#FFFFFF] dark:bg-[#1C1C1C]",
+                        showNav: "bg-[#FFFFFF] dark:bg-primary",
                     };
                 });
             }
@@ -92,15 +92,15 @@ const Header = () => {
     return (
         <div className={`flex items-center justify-between border-b-[1px] border-b-[#1C1C1C1A] dark:border-b-[#FFFFFF33] p-4 z-10 sticky top-0 transition-transform duration-500 ${state?.showNav} `}>
             <div className='flex items-center gap-2 md:gap-4'>
-                <AppWindow size={24} strokeWidth={1.5} className="hidden md:flex text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
-                <Star size={24} strokeWidth={1.5} className="hidden md:flex text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A]" />
+                <AppWindow size={24} strokeWidth={1.5} className="hidden md:flex text-primary dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
+                <Star size={24} strokeWidth={1.5} className="hidden md:flex text-primary dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A]" />
                 <Breadcrumb />
 
                 {/* // for mobile responsive - dashboard and order list tab provided for navigation mobile */}
                 <img src={image4} alt="" className='md:hidden flex w-[20px] h-[20px] rounded-full object-cover' />
                 <div className='flex md:hidden items-center gap-2'>
-                    <p className={`text-xs font-normal  rounded-full px-2 py-1 ${!urlBarString[0] ? ' bg-[#E3F5FF] text-[#1C1C1C]' : ' bg-[#F7F9FB] dark:bg-[#FFFFFF1A] dark:text-[#FFFFFF]'}`} onClick={() => navigate('/')}>Dashboards</p>
-                    <p className={`text-xs font-normal  rounded-full px-2 py-1 ${urlBarString[0] === 'orders' ? ' bg-[#E3F5FF] text-[#1C1C1C]' : ' bg-[#F7F9FB] dark:bg-[#FFFFFF1A] dark:text-[#FFFFFF]'}`} onClick={() => navigate('/orders')}>Order List</p>
+                    <p className={`cursor-pointer text-xs font-normal  rounded-full px-2 py-1 ${!urlBarString[0] ? ' bg-[#E3F5FF] text-primary' : ' bg-[#F7F9FB] dark:bg-[#FFFFFF1A] dark:text-[#FFFFFF]'}`} onClick={() => navigate('/')}>Dashboards</p>
+                    <p className={`cursor-pointer text-xs font-normal  rounded-full px-2 py-1 ${urlBarString[0] === 'orders' ? ' bg-[#E3F5FF] text-primary' : ' bg-[#F7F9FB] dark:bg-[#FFFFFF1A] dark:text-[#FFFFFF]'}`} onClick={() => navigate('/orders')}>Order List</p>
                 </div>
             </div>
             <div className='hidden md:flex items-center gap-2 md:gap-4'>

@@ -12,6 +12,7 @@ const OrderTable = () => {
         orderName: "",
     })
 
+    // order status enums
     let status = {
         0: 'Rejected',
         1: 'Complete',
@@ -45,6 +46,7 @@ const OrderTable = () => {
         })
     }
 
+    //check/UnCheck all order list data
     const handleCheckAllData = (key) => {
         let { checkedData } = state;
         let data = []
@@ -62,6 +64,7 @@ const OrderTable = () => {
         })
     }
 
+    //copy selected order adress
     const handleCopyMessage = (a) => {
         navigator.clipboard.writeText(a);
         // here we can use Toastify component for alert message
@@ -71,13 +74,13 @@ const OrderTable = () => {
     let { checkedData, checkAll } = state;
     return (
         <div className="relative overflow-x-auto sm:rounded-lg">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <table className="w-full text-sm text-left rtl:text-right">
                 <thead>
                     <tr className='border-b-[1px] p-3  dark:border-b-[#FFFFFF1A]'>
                         <th scope="col" className="px-2 py-2  text-start font-normal text-[#1C1C1C66] dark:text-[#FFFFFF66] text-xs" >
                             {
                                 checkAll ?
-                                    <SquareCheck fill={appTheme ? '#C6C7F8' : '#1C1C1C'} onClick={() => handleCheckAllData(false)} size={14} strokeWidth={1} className='text-[#FFFFFF] dark:text-[#1C1C1C]' />
+                                    <SquareCheck fill={appTheme ? '#C6C7F8' : '#1C1C1C'} onClick={() => handleCheckAllData(false)} size={14} strokeWidth={1} className='text-[#FFFFFF] dark:text-primary' />
                                     :
                                     <Square onClick={() => handleCheckAllData(true)} size={14} strokeWidth={1} className='text-[#1C1C1C33] dark:text-[#FFFFFF66] cursor-pointer' />
                             }
@@ -102,34 +105,36 @@ const OrderTable = () => {
                                             <Square onClick={() => handleCheckData(d._id)} size={14} strokeWidth={1} className='text-[#1C1C1C33] dark:text-[#FFFFFF66] transition-transform hover:scale-125 duration-500 ease-in-out cursor-pointer' />
                                     }
                                 </th>
-                                <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs">
+                                <td className="pr-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs">
                                     {d?._id}
                                 </td>
-                                <td className="px-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs flex items-center gap-1">
+                                <td className="px-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs flex items-center gap-1">
                                     <img src={d?.image} alt="" className='w-[24px] h-[24px] rounded-full object-cover' />
                                     <p className='text-xs  whitespace-nowrap'>{d?.name}</p>
                                 </td>
-                                <td className="px-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs whitespace-nowrap">
+                                <td className="px-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs whitespace-nowrap">
                                     {d?.project}
                                 </td>
-                                <td className="px-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs relative whitespace-nowrap">
+                                <td className="px-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs relative whitespace-nowrap">
                                     <div className='flex items-center gap-1'>
                                         <p className='text-xs whitespace-nowrap'>{d?.address}</p>
-                                        <ClipboardList onClick={() => handleCopyMessage(d?.address)} size={14} strokeWidth={1.5} className='text-[#1C1C1C] dark:text-[#FFFFFF] invisible group-hover:visible cursor-pointer' />
+                                        <ClipboardList onClick={() => handleCopyMessage(d?.address)} size={14} strokeWidth={1.5} className='text-primary dark:text-[#FFFFFF] invisible group-hover:visible cursor-pointer' />
                                     </div>
 
                                 </td>
-                                <td className="px-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs relative whitespace-nowrap">
+                                <td className="px-6 py-2 text-start font-normal text-primary dark:text-[#FFFFFF] text-xs relative whitespace-nowrap">
                                     <div className='flex items-center gap-1'>
-                                        <Calendar size={14} strokeWidth={1.5} className='text-[#1C1C1C] dark:text-[#FFFFFF] cursor-pointer' />
+                                        <Calendar size={14} strokeWidth={1.5} className='text-primary dark:text-[#FFFFFF] cursor-pointer' />
                                         <p className='text-xs whitespace-nowrap'>{d?.date}</p>
                                     </div>
                                 </td>
-                                <td className={`px-6 py-2 text-start font-normal text-xs ${statusColor[d?.status] || 'text-[#1C1C1C]'} whitespace-nowrap`}>
-                                    <div className='flex items-center gap-1'>
-                                        <Dot size={14} strokeWidth={6} />
-                                        <p className='text-xs whitespace-nowrap'>{status[d?.status]}</p>
-                                        <Ellipsis size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] mx-2 invisible group-hover:visible p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] absolute right-0 transition-transform hover:scale-125 duration-500 ease-in-out" />
+                                <td className={`pl-6 py-2 text-start font-normal text-xs ${statusColor[d?.status] || 'text-primary'} whitespace-nowrap`}>
+                                    <div className='flex items-center justify-between gap-2'>
+                                        <div className='flex items-center gap-1'>
+                                            <Dot size={14} strokeWidth={6} />
+                                            <p className='text-xs whitespace-nowrap line-clamp-1'>{status[d?.status]}</p>
+                                        </div>
+                                        <Ellipsis size={24} strokeWidth={1.5} className="text-primary dark:text-[#FFFFFF] m-0 md:mx-2 invisible group-hover:visible p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A]  transition-transform hover:scale-125 duration-500 ease-in-out" />
                                     </div>
                                 </td>
                             </tr>

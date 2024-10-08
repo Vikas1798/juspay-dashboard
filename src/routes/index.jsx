@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { useRoutes } from "react-router-dom";
 import Ecommerce from "../Components/Dashboard/Pages/Ecommerce";
 import Order from "../Components/Dashboard/Pages/Order";
-import FallbackLoading from '../BasicComponents/FallbackLoading';
+// import FallbackLoading from '../BasicComponents/FallbackLoading';
 import PageNotFound from '../BasicComponents/PageNotFound';
 
 const LeftDrawer = lazy(() => import('../Components/LeftDrawer'));
@@ -27,7 +27,7 @@ export default function Routes(props) {
     ]);
     return (
         // <Suspense fallback={<FallbackLoading />}>
-        <section className='scroll-smooth grid grid-cols-12 items-start dark:bg-[#1C1C1C] h-full'>
+        <section className='scroll-smooth grid grid-cols-12 items-start dark:bg-primary h-full'>
             <LeftDrawer />
             <div className='col-span-12 xl:col-span-8 border-x-[1px] border-x-[#1C1C1C1A] dark:border-x-[#FFFFFF33]'>
                 <Header />
