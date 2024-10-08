@@ -55,7 +55,7 @@ const Dashboard = () => {
             <>
                 {
                     list?.map((d, i) => (
-                        <div onClick={() => navigate(d?.slug)} key={i} className={`hover:bg-[#1C1C1C0D] hover:dark:bg-[#FFFFFF1A] group ${urlBarString[1] === d?.slug ? ' bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]' : ''} relative flex items-center py-[2px] rounded-[8px] cursor-pointer mb-1`}>
+                        <div onClick={() => navigate(d?.slug)} key={i} className={`hover:bg-[#1C1C1C0D] hover:dark:bg-[#FFFFFF1A] group ${urlBarString[1] === d?.slug ? ' bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]' : ''} relative flex items-center py-[2px] rounded-[8px] cursor-pointer mb-1 transition-transform hover:scale-105 duration-500 ease-in-out`}>
                             {
                                 urlBarString[1] === d?.slug && <div className='h-[14px] w-[3px] absolute left-0 bg-[#1C1C1C] rounded-[1px] group-hover: dark:bg-[#C6C7F8]'></div>
                             }

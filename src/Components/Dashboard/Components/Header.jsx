@@ -72,6 +72,18 @@ const Header = () => {
         })
     }
 
+    let icons = [
+        {
+            icon: TimerReset
+        },
+        {
+            icon: Bell
+        },
+        {
+            icon: AppWindow
+        }
+    ]
+
     return (
         <div className={`flex items-center justify-between border-b-[1px] border-b-[#1C1C1C1A] dark:border-b-[#FFFFFF33] p-4 z-10 sticky top-0 transition-transform duration-500 ${state?.showNav} `}>
             <div className='flex items-center gap-2 md:gap-4'>
@@ -94,12 +106,12 @@ const Header = () => {
                 </div>
                 {
                     appTheme ?
-                        <Moon onClick={() => dispatch(handleTheme())} size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
-                        : <Sun onClick={() => dispatch(handleTheme())} size={24} strokeWidth={1.5} className="text-[#1C1C1C]  p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D]  " />
+                        <Moon onClick={() => dispatch(handleTheme())} size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] transition-transform hover:scale-125 duration-500 ease-in-out" />
+                        : <Sun onClick={() => dispatch(handleTheme())} size={24} strokeWidth={1.5} className="text-[#1C1C1C]  p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D]  transition-transform hover:scale-125 duration-500 ease-in-out" />
                 }
-                <TimerReset size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
-                <Bell size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
-                <AppWindow size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
+                {
+                    icons?.map((d, i) => <d.icon key={i} size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] transition-transform hover:scale-125 duration-500 ease-in-out" />)
+                }
             </div>
             <div className='md:hidden flex items-center gap-2 md:gap-4'>
                 {

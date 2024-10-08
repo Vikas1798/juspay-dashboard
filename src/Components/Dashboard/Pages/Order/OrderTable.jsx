@@ -98,8 +98,8 @@ const OrderTable = () => {
                                 <th scope="col" className="px-2 py-2  text-start font-normal text-[#1C1C1C66] dark:text-[#FFFFFF66] text-xs" >
                                     {
                                         checkedData.includes(d._id) ?
-                                            <SquareCheck onClick={() => handleCheckData(d._id)} fill={appTheme ? '#C6C7F8' : '#1C1C1C'} size={14} strokeWidth={1} className='text-[#FFFFFF] dark:text-[#1C1C1C]' /> :
-                                            <Square onClick={() => handleCheckData(d._id)} size={14} strokeWidth={1} className='text-[#1C1C1C33] dark:text-[#FFFFFF66]' />
+                                            <SquareCheck onClick={() => handleCheckData(d._id)} fill={appTheme ? '#C6C7F8' : '#1C1C1C'} size={14} strokeWidth={1} className='text-[#FFFFFF] dark:text-[#1C1C1C] transition-transform hover:scale-125 duration-500 ease-in-out cursor-pointer' /> :
+                                            <Square onClick={() => handleCheckData(d._id)} size={14} strokeWidth={1} className='text-[#1C1C1C33] dark:text-[#FFFFFF66] transition-transform hover:scale-125 duration-500 ease-in-out cursor-pointer' />
                                     }
                                 </th>
                                 <td className="pr-6 py-2 text-start font-normal text-[#1C1C1C] dark:text-[#FFFFFF] text-xs">
@@ -129,7 +129,7 @@ const OrderTable = () => {
                                     <div className='flex items-center gap-1'>
                                         <Dot size={14} strokeWidth={6} />
                                         <p className='text-xs whitespace-nowrap'>{status[d?.status]}</p>
-                                        <Ellipsis size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] mx-2 invisible group-hover:visible p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] absolute right-0" />
+                                        <Ellipsis size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] mx-2 invisible group-hover:visible p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] absolute right-0 transition-transform hover:scale-125 duration-500 ease-in-out" />
                                     </div>
                                 </td>
                             </tr>

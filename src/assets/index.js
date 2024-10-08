@@ -11,5 +11,16 @@ import image9 from "../assets/Icons/image9.png";
 import image10 from "../assets/Icons/image10.png";
 import image11 from "../assets/Icons/image11.png";
 
+import worldMap from "../assets/Images/world-map.svg";
+import donutChart from "../assets/Images/donut-chart.svg";
+import worldMapDark from "../assets/Images/worldMapDark.svg";
+import donutChartDark from "../assets/Images/donut-chart-dark.svg";
 
-export { image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11 };
+import BarChartDark from "../assets/Images/BarChartDark.svg";
+import BarChart from "../assets/Images/BarChart.svg";
+
+import areaChartDark from "../assets/Images/area-chart-dark.svg";
+import areaChart from "../assets/Images/area-chart.svg";
+
+
+export { image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11,worldMap, donutChart, worldMapDark, donutChartDark, BarChartDark, BarChart, areaChart, areaChartDark};

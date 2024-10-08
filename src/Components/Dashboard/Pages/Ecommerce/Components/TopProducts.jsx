@@ -1,9 +1,13 @@
 import React from 'react'
 import { productsTableData, productsTableHead, totalSales } from '../../../../../Database/db'
 import { Dot } from 'lucide-react';
-import Chart from './Chart';
+import { useSelector } from 'react-redux';
+import { donutChart, donutChartDark } from '../../../../../assets';
+// import Chart from './Chart';
 
 const TopProducts = () => {
+    const appTheme = useSelector(d => d?.theme?.mode ?? false);
+
     return (
         <main className='grid gap-5 grid-cols-1 md:grid-cols-4'>
             <div className='md:col-span-3 bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5 h-fit'>
@@ -35,9 +39,12 @@ const TopProducts = () => {
             <div className='md:col-span-1 bg-[#F7F9FB] rounded-2xl p-5 h-fit dark:bg-[#FFFFFF1A]'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Total Sales</h6>
                 <div className='mt-2'>
-                    {/* <div className='w-[120px] h-[120px] bg-gray-200 rounded-full mx-auto my-2'></div> */}
-                    {/* Donut Chart */}
-                    <Chart />
+                    {/* Donut Chart svg image */}
+                    <div className='w-[120px] h-[120px]  rounded-full mx-auto my-2'>
+                        <img src={appTheme ? donutChartDark : donutChart} alt="" className='w-full h-full object-cover' />
+                    </div>
+                    {/* Donut Chart package */}
+                    {/* <Chart /> */}
                     {
                         totalSales?.map((d, i) => (
                             <div className='flex justify-between items-center py-2 last:pb-0' key={i}>

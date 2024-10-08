@@ -9,7 +9,7 @@ const Activities = () => {
             <Header label='Activities' />
             {
                 activities?.map((d, i) => (
-                    <div className='grid grid-cols-6 gap-2 mb-3 last:mb-0 items-start' key={i}>
+                    <div className='grid grid-cols-6 gap-2 mb-3 last:mb-0 items-start transition-transform hover:scale-105 duration-500 ease-in-out' key={i}>
                         <figure className='col-span-1 flex items-center justify-center relative w-fit'>
                             <img src={d?.image} alt="" className='w-[24px] h-[24px] rounded-full object-cover' />
                             {
