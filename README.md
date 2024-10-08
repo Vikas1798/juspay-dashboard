@@ -2,7 +2,8 @@
 
 ## Tech Stack
 - HTML/CSS
-- Tailwind
+- Tailwind,
+- Material Tailwind 
 - JavaScript (ES6)
 - React + Vite
 - Redux-Toolkit
