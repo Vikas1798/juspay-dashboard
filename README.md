@@ -1,8 +1,25 @@
-# React + Vite
-test
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Juspay dashboard app
 
-Currently, two official plugins are available:
+## Tech Stack
+- React + Vite
+- Tailwind CSS / CSS
+- React Router Dom
+- Redux-Toolkit
+- Vercel for deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Installation:
+1. Clone the Repository
+    - git clone https://github.com/Vikas1798/juspay-dashboard.git
+
+2. Navigate to the Cloned Repository
+    - cd <name of the repo>
+
+3. Install Dependencies
+    - yarn
+
+4. Start the Project
+    - yarn run dev
+
+### Live Demo
+    [View Deployed Project on Vercel]
+    Link : https://juspay-dashboard-app.vercel.app/
