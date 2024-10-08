@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, memo } from 'react';
 import ErrorBoundary from '../../BasicComponents/ErrorBoundary';
 import FallbackLoading from '../../BasicComponents/FallbackLoading';
 
@@ -66,4 +66,4 @@ const LeftDrawer = () => {
     )
 }
 
-export default LeftDrawer;
+export default memo(LeftDrawer);

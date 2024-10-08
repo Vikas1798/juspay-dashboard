@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import RevenueChart from './Components/RevenueChart'
 import RevenueByLocation from './Components/RevenueByLocation'
 
@@ -11,4 +11,4 @@ const Revenue = () => {
     )
 }
 
-export default Revenue
+export default memo(Revenue)

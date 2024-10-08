@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { TrendingDown, TrendingUp } from 'lucide-react'
 import ReactApexChart from "react-apexcharts";
@@ -120,4 +120,4 @@ const Stats = () => {
     )
 }
 
-export default Stats
+export default memo(Stats);

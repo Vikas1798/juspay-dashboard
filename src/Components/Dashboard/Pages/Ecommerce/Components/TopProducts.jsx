@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { productsTableData, productsTableHead, totalSales } from '../../../../../Database/db'
 import { Dot } from 'lucide-react';
 import { useSelector } from 'react-redux';
@@ -76,4 +76,4 @@ const TopProducts = () => {
     )
 }
 
-export default TopProducts;
+export default memo(TopProducts);

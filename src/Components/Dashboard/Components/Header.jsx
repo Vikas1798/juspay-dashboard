@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { AlignRight, AppWindow, Bell, Moon, Search, Slack, Star, Sun, TimerReset } from 'lucide-react';
 import Breadcrumb from './Breadcrumb';
@@ -136,4 +136,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default memo(Header);

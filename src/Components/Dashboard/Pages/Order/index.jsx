@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, memo } from 'react';
 import { ArrowDownUp, ChevronLeft, ChevronRight, Plus, Search, Slack, Text } from 'lucide-react';
 import FallbackLoading from '../../../../BasicComponents/FallbackLoading';
 import OrderTable from './OrderTable';
@@ -97,4 +97,4 @@ const Order = () => {
     )
 }
 
-export default Order;
+export default memo(Order);

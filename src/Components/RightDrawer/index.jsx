@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Notification from './Components/Notification'
 import Activities from './Components/Activities'
 import Contacts from './Components/Contacts'
@@ -13,4 +13,4 @@ const RightDrawer = () => {
     )
 }
 
-export default RightDrawer
+export default memo(RightDrawer);
