@@ -4,8 +4,11 @@ import { AlignRight, AppWindow, Bell, Moon, Search, Slack, Star, Sun, TimerReset
 import Breadcrumb from './Breadcrumb';
 import { handleTheme } from '../../../Redux/themeSlice';
 import { image4 } from '../../../assets';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
     const appTheme = useSelector(d => d.theme?.mode ?? false);
     const dispatch = useDispatch();
     const [state, setState] = useState({
@@ -84,13 +87,21 @@ const Header = () => {
         }
     ]
 
+    const urlBarString = location?.pathname?.split("/")?.filter((d) => d);
+    console.log('urlBarString', urlBarString)
     return (
         <div className={`flex items-center justify-between border-b-[1px] border-b-[#1C1C1C1A] dark:border-b-[#FFFFFF33] p-4 z-10 sticky top-0 transition-transform duration-500 ${state?.showNav} `}>
             <div className='flex items-center gap-2 md:gap-4'>
                 <AppWindow size={24} strokeWidth={1.5} className="hidden md:flex text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
                 <Star size={24} strokeWidth={1.5} className="hidden md:flex text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A]" />
-                <img src={image4} alt="" className='md:hidden flex w-[20px] h-[20px] rounded-full object-cover' />
                 <Breadcrumb />
+
+                {/* // for mobile responsive - dashboard and order list tab provided for navigation mobile */}
+                <img src={image4} alt="" className='md:hidden flex w-[20px] h-[20px] rounded-full object-cover' />
+                <div className='flex md:hidden items-center gap-2'>
+                    <p className={`text-xs font-normal  rounded-full px-2 py-1 ${!urlBarString[0] ? ' bg-[#E3F5FF] text-[#1C1C1C]' : ' bg-[#F7F9FB] dark:bg-[#FFFFFF1A] dark:text-[#FFFFFF]'}`} onClick={() => navigate('/')}>Dashboards</p>
+                    <p className={`text-xs font-normal  rounded-full px-2 py-1 ${urlBarString[0] === 'orders' ? ' bg-[#E3F5FF] text-[#1C1C1C]' : ' bg-[#F7F9FB] dark:bg-[#FFFFFF1A] dark:text-[#FFFFFF]'}`} onClick={() => navigate('/orders')}>Order List</p>
+                </div>
             </div>
             <div className='hidden md:flex items-center gap-2 md:gap-4'>
                 <div className='flex items-center bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A] gap-1 px-2 py-1 rounded-lg'>
@@ -119,7 +130,7 @@ const Header = () => {
                         <Moon onClick={() => dispatch(handleTheme())} size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
                         : <Sun onClick={() => dispatch(handleTheme())} size={24} strokeWidth={1.5} className="text-[#1C1C1C]  p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D]  " />
                 }
-                <AlignRight onClick={() => view} size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
+                <AlignRight size={24} strokeWidth={1.5} className="text-[#1C1C1C] dark:text-[#FFFFFF] p-1 rounded-md cursor-pointer hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] " />
             </div>
         </div>
     )

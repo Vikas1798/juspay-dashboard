@@ -3,7 +3,7 @@
 ## Tech Stack
 - HTML/CSS
 - Tailwind
-- JavaScript
+- JavaScript (ES6)
 - React + Vite
 - Redux-Toolkit
 - React Router Dom
