@@ -3,7 +3,7 @@ import { productsTableData, productsTableHead, totalSales } from '../../../../..
 import { Dot } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import { donutChart, donutChartDark } from '../../../../../assets';
-// import Chart from './Chart';
+import Chart from './Chart';
 
 const TopProducts = () => {
     const appTheme = useSelector(d => d?.theme?.mode ?? false);

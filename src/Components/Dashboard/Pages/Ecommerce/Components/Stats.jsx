@@ -101,12 +101,12 @@ const Stats = () => {
             <div className='bg-[#F7F9FB] dark:bg-[#FFFFFF1A] rounded-2xl p-5 animate-fade'>
                 <h6 className='text-sm font-semibold dark:text-[#FFFFFF]'>Projections vs Actuals</h6>
                 {/* BarChart svg image */}
-                <figure className='w-full h-full my-3'>
+                {/* <figure className='w-full h-full my-3'>
                     <img src={appTheme ? BarChart : BarChartDark} alt="" className='w-full my-2' />
-                </figure>
+                </figure> */}
 
                 {/* barchart package implementation */}
-                {/* <div className="w-full mx-auto overflow-hidden">
+                <div className="w-full mx-auto overflow-hidden">
                     <ReactApexChart
                         options={chartData.options}
                         series={chartData.series}
@@ -114,7 +114,7 @@ const Stats = () => {
                         height={150}
                         className='w-full'
                     />
-                </div> */}
+                </div>
             </div>
         </section>
     )
